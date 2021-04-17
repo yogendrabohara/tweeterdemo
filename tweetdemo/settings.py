@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,14 +26,15 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 SECRET_KEY = 't2d+_i+rme@g7zx^x(b)eggup-zkkz$*i=-v(+-)%hvsd+dk&h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,6 +46,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'django.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -57,7 +60,7 @@ ROOT_URLCONF = 'tweetdemo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR,],
+        'DIRS': [TEMPLATE_DIR, ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -134,3 +137,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 MEDIA_URL = '/images/'
 
+
+# Activate Django-heroku.
+django_heroku.settings(locals())
