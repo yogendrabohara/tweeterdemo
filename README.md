@@ -12,7 +12,7 @@ I have created a simple Twitter clone where users can post tweets and see other 
 
 ### Functionality that had been created are:
 1. Users can post tweets
-2. Users can edit tweets
+2. Users can comment on tweets
 3. Users can delete tweets
 4. Users can send a like to a tweet and see like counts
 
@@ -26,4 +26,13 @@ Use this command in local command prompt.
 ```sh
 pip install -r requirements.txt
 ```
+#### Before deployment , migrate all the changes and makemigrations using following shell command prompt:
+```sh
+python manage.py migrate
+python manage.py makemigrations 
+python manage.py runserver
+```
+
+### Deployment
+_ Application will be serving on http://localhost:8000
 
