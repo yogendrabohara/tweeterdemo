@@ -34,5 +34,5 @@ python manage.py runserver
 ```
 
 ### Deployment
-_  Application will be serving on http://localhost:8000
+- Application will be serving on http://localhost:8000
 
