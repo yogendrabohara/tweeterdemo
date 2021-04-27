@@ -20,6 +20,10 @@ I have created a simple Twitter clone where users can post tweets and see other 
 
 Atfirst install python package. You can download python from https://www.python.org/downloads/
 .Then clone this github and save in your device.
+```sh
+git clone https://github.com/yogendra/tweeterdemo/
+cd tweeterdemo
+```
 It is important to download the requirements to run this app in your localhost , hence to download all the requirements packages used during building phases.
 Use this command in local command prompt.
 
@@ -28,8 +32,9 @@ pip install -r requirements.txt
 ```
 #### Before deployment , migrate all the changes and makemigrations using following shell command prompt:
 ```sh
+python manage.py makemigrations
+
 python manage.py migrate
-python manage.py makemigrations 
 python manage.py runserver
 ```
 
