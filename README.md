@@ -6,9 +6,9 @@ I have created a simple Twitter clone where users can post tweets and see other 
 
 #Technologies Used
 
-*HTML , CSS and BOOTSTRAP
-*JAVASCRIPT 
-*DJANGO
+* HTML , CSS and BOOTSTRAP
+* JAVASCRIPT 
+* DJANGO
 
 #Functionality that had been created are:
 1.Users can post tweets
