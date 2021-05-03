@@ -1,7 +1,7 @@
 # Tweeterdemo
 I have created a simple Twitter clone where users can post tweets and see other post in our app. It is a simple project , so I did not include a sign up/login in functionality. I have used this project to learn CRUD(Create/Read/Update/Delete) functionality.
 
-### [LIVE DEMO](https://dashboard.heroku.com/apps/tweetclone1)
+### [LIVE DEMO](https://tweetclone1.herokuapp.com/)
 
 
 ### Technologies Used
