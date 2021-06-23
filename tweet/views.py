@@ -11,7 +11,7 @@ import cloudinary
 
 def index(request):
     print('Index function')
-    userpost = Tweet.objects.filter(parent_tweet_id=None)
+    userpost = Tweet.objects.filter(parent_tweet_id=None).order_by('-id')[:19]
     print('fetch userpost')
     for post in userpost:
         print('for userpost')

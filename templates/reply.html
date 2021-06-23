@@ -1,49 +1,45 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Sample Twitter</title>
-	<link rel="icon" type="image/png" sizes="96x96" href="images/favicon.png">
-	<meta name=”viewport” content=”width=device-width, initial-scale=1”>
-	<link rel="stylesheet" type="text/css" href="{% static 'tweetcss/style.css' %}"
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="{% static 'tweetcss/style.css' %}" />
+  </head>
+  <body>
+    <div class="content">
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
 
-</head>
-<body>
-	<div class="content">
+        <header>
+          <a href="/">
+            <img class="header-back" src="{% static 'images/back.svg' %}" />
+            <h1>Reply Tweet</h1>
+          </a>
+          <button type="submit" class="header-button">Reply</button>
+        </header>
 
-		<form class="tweet-form" method="POST" enctype="multipart/form-data">
-		{% csrf_token %}
-		<header>
-			<img class="header-back"  src="{% static 'images/back.svg' %}" style="width: 20%">
-			<h1>Post Tweet</h1>
-			<button type="submit" class="header-button">reply</button>
-		</header>
+        <main>
+          <!-- Reply Tweet Form -->
 
-		<main>
-		<!-- Reply Tweet Form -->
+          <div class="tweet-form">
+            <div class="tweet-form-icon">
+              <img src="{% static 'images/post-default-icon.svg' %}" />
+            </div>
 
+            <div class="tweet-form-content">
+              <div class="tweet-name">{{form.name}}</div>
+              <div class="tweet-textarea">{{form.text}}</div>
+            </div>
+          </div>
+        </main>
+      </form>
+    </div>
 
-			<div class="tweet-form-icon">
-				<img src="{% static 'images/post-default-icon.svg' %}">
-			</div>
-
-			<div class="tweet-form-content">
-
-                <div class="tweet-name">{{form.name}}</div>
-
-				<div class="tweet-textarea">{{form.text}}</div>
-<!--				<img class="tweet-image" src="{{form.image_url|default_if_none:'#' }}">-->
-				<div class="tweet-form-image" style="width: 100%">{{form.image}}</div>
-			</div>
-		</form>
-
-		</main>
-
-	</div>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="twitter.js"></script>
-</body>
+  </body>
 </html>
