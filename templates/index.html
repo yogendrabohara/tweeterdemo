@@ -32,9 +32,8 @@
 						<span class="tweet-created-at">{{postdata.created_at}}</span>
 					</div>
 					<p>{{postdata.text}}</p>
-					{% if postdata.image != '' %}
-					<img class="tweet-image" src="{{postdata.image_url|default_if_none:'#' }}">
-<!--					<div class="tweet-image">{{postdata.image}}</div>-->
+					{% if postdata.image is not Null %}
+					<img class="tweet-image" src="{{postdata.image.url }}">
 					{% endif %}
 					<div class="tweet-buttons">
 						<a href="{% url 'reply' postdata.id %}"><img class="tweet-reply" src="{% static 'images/comment.svg' %}"></a>

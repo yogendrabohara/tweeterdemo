@@ -6,14 +6,16 @@ from .models import Tweet
 
 from .forms import NewUserForm
 
+import cloudinary
+
 
 def index(request):
     print('Index function')
-    userpost = Tweet.objects.filter( parent_tweet_id= None)
+    userpost = Tweet.objects.filter(parent_tweet_id=None)
     print('fetch userpost')
     for post in userpost:
         print('for userpost')
-        post.replycount = Tweet.objects.filter(parent_tweet_id = post.id).count()
+        post.replycount = Tweet.objects.filter(parent_tweet_id=post.id).count()
         print(post.replycount)
         # print(post.image == '')
 
@@ -23,11 +25,12 @@ def index(request):
     }
     return render(request, 'index.html', content)
 
+
 def posttweet(request):
     # context= {}
     # print("Started posttweet")
-    #creating an object and assigning it with the instance
-    form  = NewUserForm()
+    # creating an object and assigning it with the instance
+    form = NewUserForm()
     # print(form)
     # print("created form")
     if request.method == 'POST':
@@ -45,8 +48,8 @@ def posttweet(request):
 
 
 def tweetdetail(request, id):
-    atweet = Tweet.objects.get(id = id)
-    replies = Tweet.objects.filter(parent_tweet_id = id)
+    atweet = Tweet.objects.get(id=id)
+    replies = Tweet.objects.filter(parent_tweet_id=id)
     countreplies = replies.count()
     # print("Counting replies ")
     # print(countreplies)
@@ -64,7 +67,7 @@ def reply(request, id):
 
         if form.is_valid():
             form.save(commit=True)
-            return redirect(reverse('tweetdetail',args = [id]))
+            return redirect(reverse('tweetdetail', args=[id]))
         else:
             print(form.errors)
     return render(request, 'reply.html', {'form': form})

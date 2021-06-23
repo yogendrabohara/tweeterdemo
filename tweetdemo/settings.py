@@ -29,9 +29,10 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 SECRET_KEY = 't2d+_i+rme@g7zx^x(b)eggup-zkkz$*i=-v(+-)%hvsd+dk&h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '*.herokuapp.com']
+ALLOWED_HOSTS = ['']
+# ALLOWED_HOSTS = ['127.0.0.1', '*.herokuapp.com']
 
 
 # Application definition
@@ -145,9 +146,10 @@ MEDIA_URL = '/images/'
 # Activate Django-heroku.
 django_heroku.settings(locals())
 
-#cloudinary config
+# cloudinary config
+
 cloudinary.config(
-  cloud_name = “techis”,
-  api_key = “886187759951178",
-  api_secret = “WGcWrWfkPlxdOCdlFaLTdjSNtfo”
+    cloud_name='techis',
+    api_key='886187759951178',
+    api_secret='WGcWrWfkPlxdOCdlFaLTdjSNtfo'
 )
