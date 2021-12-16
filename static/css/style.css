@@ -201,12 +201,12 @@ form {
 }
 
 .postimage{
-  width: 130%;
   border-radius: 20px;
   margin-top: 10px;
   align-content: center;
   margin-bottom: 10px;
   margin-left: 30px;
+  width:130%;
 
 }
 
