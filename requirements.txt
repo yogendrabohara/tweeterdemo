@@ -64,6 +64,7 @@ meltano-flask-security==0.1.0
 monotonic==1.6
 msrest==0.6.21
 multidict==5.1.0
+mysqlclient==2.1.0
 networkx==2.5.1
 oauthlib==3.1.1
 oscrypto==1.2.1
