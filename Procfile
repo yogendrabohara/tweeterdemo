@@ -1,2 +1,1 @@
-release: python manage.py migrate
-web: gunicorn tweetdemo.wsgi
+web: gunicorn django_forum.wsgi
