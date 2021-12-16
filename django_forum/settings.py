@@ -79,12 +79,12 @@ WSGI_APPLICATION = 'django_forum.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',  # We set the engine to MySQL
-        'NAME': 'tweet',  # Your database name
-        'USER': 'root',  # root is the default user for MySQL
-        'PASSWORD': '12345',  # Password is blank by default
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.postgresql',  # We set the engine to MySQL
+        'NAME': 'dc0vg0923e6nq8',  # Your database name
+        'USER': 'fvrredtawancbs',  # root is the default user for MySQL
+        'PASSWORD': '9c0e581723bebddcd413811e4439c794a27fba0257ea5c301984630a14f8dab2',  # Password is blank by default
+        'HOST': 'ec2-54-167-152-185.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
